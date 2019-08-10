@@ -1,1 +1,1 @@
-# author-chimera
+# Author: Chimera Studio
