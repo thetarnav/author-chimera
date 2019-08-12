@@ -4,7 +4,7 @@
   "description": "A website that tells more about the authors of the website.",
   "main": "index.html",
   "scripts": {
-    "build": "parcel build src/index.html --no-cache --out-dir build",
+    "build": "parcel build src/index.html --no-cache --out-dir docs",
     "dev": "parcel src/index.html --out-dir dev"
   },
   "repository": {
