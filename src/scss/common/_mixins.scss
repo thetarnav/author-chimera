@@ -1,0 +1,66 @@
+@mixin fluid-transition($transitions...) {
+   $unfoldedTransitions: ();
+   @each $transition in $transitions {
+      $unfoldedTransitions: append($unfoldedTransitions,
+            $transition .4s $fluid-easing,
+            comma);
+   }
+   transition: $unfoldedTransitions;
+}
+
+@mixin lazy-transition($transitions...) {
+   $unfoldedTransitions: ();
+   @each $transition in $transitions {
+      $unfoldedTransitions: append($unfoldedTransitions,
+            $transition .6s ease,
+            comma);
+   }
+   transition: $unfoldedTransitions;
+}
+
+@mixin lazy-opacity {
+   @include lazy-transition(opacity);
+   &.lazy {
+      opacity: 0;
+   }
+}
+
+@mixin lazy-transform($x: 0, $y: 0) {
+   @include lazy-transition(opacity, transform);
+   &.lazy {
+      opacity: 0;
+      transform: translate($x, $y);
+   }
+}
+
+@mixin fixed {
+   position: fixed;
+   transform: translate3d(0, 0, 0) translateZ(0);
+}
+
+@mixin hide-scroll {
+   -ms-overflow-style: none; // IE 10+
+   scrollbar-width: none; // Firefox
+
+   &::-webkit-scrollbar {
+      display: none; // Safari and Chrome
+      width: 0px;
+      /* Remove scrollbar space */
+      background: transparent;
+      /* Optional: just make scrollbar invisible */
+   }
+}
+
+@mixin blur-fix {
+   -webkit-backface-visibility: hidden;
+   -webkit-font-smoothing: subpixel-antialiased;
+   -webkit-filter: blur(0);
+   filter: blur(0);
+   transform: translateZ(0) scale(1.0, 1.0);
+   image-rendering: optimizeSpeed;
+   image-rendering: -moz-crisp-edges;
+   image-rendering: -o-crisp-edges;
+   image-rendering: -webkit-optimize-contrast;
+   image-rendering: optimize-contrast;
+   -ms-interpolation-mode: nearest-neighbor;
+}

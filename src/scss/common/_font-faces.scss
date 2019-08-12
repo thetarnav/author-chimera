@@ -1,0 +1,22 @@
+@import url("https://use.typekit.net/kkc7ohi.css");
+
+@mixin font-regular {
+   font-family: aileron, sans-serif;
+   font-weight: 400;
+   font-style: normal;
+}
+@mixin font-italic {
+   font-family: aileron, sans-serif;
+   font-weight: 400;
+   font-style: italic;
+}
+@mixin font-semibold-italic {
+   font-family: aileron, sans-serif;
+   font-weight: 600;
+   font-style: italic;
+}
+@mixin font-black-italic {
+   font-family: aileron, sans-serif;
+   font-weight: 800;
+   font-style: italic;
+}

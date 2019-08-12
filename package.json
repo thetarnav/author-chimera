@@ -1,0 +1,43 @@
+{
+  "name": "author-chimera",
+  "version": "1.0.0",
+  "description": "A website that tells more about the authors of the website.",
+  "main": "index.html",
+  "scripts": {
+    "build": "parcel build src/index.html --no-cache --out-dir build",
+    "dev": "parcel src/index.html --out-dir dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thetarnav/author-chimera.git"
+  },
+  "author": "Damian Tarnawski @thetarnav",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thetarnav/author-chimera/issues"
+  },
+  "homepage": "https://github.com/thetarnav/author-chimera#readme",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "autoprefixer": "^9.6.1",
+    "browserslist": "^4.6.6",
+    "parcel-bundler": "^1.12.3",
+    "postcss-modules": "^1.4.1",
+    "postcss-uncss": "^0.17.0",
+    "sass": "^1.22.9",
+    "uncss": "^0.17.0"
+  },
+  "dependencies": {
+    "body-scroll-lock": "^2.6.4",
+    "lodash.debounce": "^4.0.8"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}
