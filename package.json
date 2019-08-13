@@ -29,6 +29,7 @@
     "uncss": "^0.17.0"
   },
   "dependencies": {
+    "@iconfu/svg-inject": "^1.2.3",
     "body-scroll-lock": "^2.6.4",
     "lodash.debounce": "^4.0.8"
   },

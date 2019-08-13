@@ -5,14 +5,17 @@
 html {
    font-family: aileron, sans-serif;
    color: $cold-white;
+   overflow: hidden;
 }
 html, body {
    width: 100%;
    height: 100%;
-   overflow: hidden;
+   @include hide-scroll;
 }
 body {
    background: $cold-black;
+   overflow-x: hidden;
+   overflow-y: scroll;
 }
 * {
    -webkit-font-smoothing: antialiased;
@@ -35,11 +38,12 @@ a {
 
 $page-margin: 32px;
 
-main {
+main, .main-copy {
    width: 100%;
    height: 100%;
    padding: $page-margin;
    padding-top: 0;
+   overflow: hidden;
 
    display: flex;
    flex-direction: column;
@@ -51,6 +55,7 @@ main {
    width: 296px;
    height: $page-margin;
    position: relative;
+   z-index: -2;
    &::after {
       content: '';
       position: absolute;
@@ -91,10 +96,11 @@ main {
 
 .chimera {
    h1 {
+      width: 296px;
       @include font-black-italic;
       color: $red;
       font-size: 50px;
-      letter-spacing: 9.3px;
+      letter-spacing: 10px;
       text-transform: uppercase;
       text-align: center;
    }
@@ -127,13 +133,13 @@ main {
                margin-right: 0;
             }
          }
-         svg {
+         svg, img {
             max-width: 20px;
             max-height: 20px;
             width: 100%;
-            path {
-               fill: $cold-white;
-            }
+         }
+         path {
+            fill: $cold-white;
          }
       }
 
@@ -161,8 +167,9 @@ main {
       top: 0;
       left: 0;
       right: 0;
-      bottom: #{-$page-margin - 5px};
+      bottom: #{-$page-margin * 2};
       border: 5px solid $red;
+      background-color: $cold-black;
    }
 
    &--header-wrapper {
@@ -176,7 +183,7 @@ main {
       font-size: 31px;
       text-transform: uppercase;
       position: absolute;
-      top: -7px;
+      top: -7.2px;
       left: -5px;
    }
    p {
