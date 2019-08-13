@@ -1,0 +1,12 @@
+@media screen and (min-width: $tablet-horizontal) {
+   .top-element, .bot-element {
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: var(--page-margin);
+   }
+   .bot-element {
+      left: auto;
+      right: 0;
+   }
+}

@@ -37,23 +37,39 @@ a {
 }
 
 $page-margin: 32px;
+$content-width: 296px;
+:root {
+   --page-margin: #{$page-margin};
+   --content-width: #{$content-width};
+}
 
-main, .main-copy {
+.main,
+.main--copy {
    width: 100%;
    height: 100%;
-   padding: $page-margin;
+   padding: var(--page-margin);
    padding-top: 0;
    overflow: hidden;
-
+}
+.main--copy {
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: space-between;
 }
+.main--wrapper {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+   padding-bottom: var(--page-margin);
+}
 
 .top-element {
-   width: 296px;
-   height: $page-margin;
+   width: var(--content-width);
+   height: var(--page-margin);
    position: relative;
    z-index: -2;
    &::after {
@@ -65,6 +81,9 @@ main, .main-copy {
       border: 5px solid $red;
    }
 }
+.bot-element {
+   display: none;
+}
 
 .website {
    p {
@@ -72,7 +91,7 @@ main, .main-copy {
    }
    a {
       display: block;
-      width: 296px;
+      width: var(--content-width);
       height: 43px;
 
       @include font-semibold-italic;
@@ -96,7 +115,7 @@ main, .main-copy {
 
 .chimera {
    h1 {
-      width: 296px;
+      width: var(--content-width);
       @include font-black-italic;
       color: $red;
       font-size: 50px;
@@ -134,9 +153,8 @@ main, .main-copy {
             }
          }
          svg, img {
-            max-width: 20px;
-            max-height: 20px;
-            width: 100%;
+            width: 20px;
+            height: 20px;
          }
          path {
             fill: $cold-white;
@@ -155,7 +173,7 @@ main, .main-copy {
 }
 
 .contact {
-   width: 296px;
+   width: var(--content-width);
    height: 113px;
    position: relative;
    display: flex;
@@ -167,7 +185,7 @@ main, .main-copy {
       top: 0;
       left: 0;
       right: 0;
-      bottom: #{-$page-margin * 2};
+      bottom: calc(var(--page-margin) * -2);
       border: 5px solid $red;
       background-color: $cold-black;
    }
@@ -199,3 +217,8 @@ main, .main-copy {
       text-transform: uppercase;
    }
 }
+
+
+@import './devices/tablet.scss';
+@import './devices/tablet-h.scss';
+@import './devices/desktop.scss';

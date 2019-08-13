@@ -1,10 +1,11 @@
 module.exports = {
    plugins: [
-      require("postcss-uncss")({
-         html: [
-            './src/index.html'
-         ]
-      }),
+      // require("postcss-uncss")({
+      //    html: [
+      //       './src/index.html'
+      //    ],
+      //    ignore: ['inject-svg', 'svg', 'path']
+      // }),
       require('autoprefixer')({
          overrideBrowserslist: [
             ">1%",

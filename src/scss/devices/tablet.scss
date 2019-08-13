@@ -1,0 +1,132 @@
+@media screen and (min-width: $tablet) {
+   .main-copy {
+      display: none;
+   }
+   body {
+      overflow: hidden;
+   }
+
+   $page-margin: 69px;
+   $content-width: 406px;
+   :root {
+      --page-margin: #{$page-margin};
+      --content-width: #{$content-width};
+   }
+
+   .main {
+      padding: 0;
+      &--wrapper {
+         justify-content: center;
+         padding: 0;
+         &--placeholder {
+            display: none;
+         }
+      }
+   }
+
+   .top-element, .bot-element {
+      position: fixed;
+      left: 0;
+      width: 100%;
+      background: url('../img/stripes-red.png');
+      
+   }
+   .top-element {
+      top: 0;
+      &::after {
+         content: none;
+      }
+   }
+   .bot-element {
+      display: block;
+      bottom: 0;
+      height: var(--page-margin);
+   }
+
+   .website {
+      display: flex;
+      position: relative;
+      margin-bottom: 50px;
+      p {
+         margin-bottom: 0;
+         line-height: 59px;
+      }
+      a {
+         height: 59px;
+         line-height: 59px;
+         @include font-semibold-italic;
+         font-size: 24px;
+      }
+   }
+
+   .website p,
+   .chimera p {
+      position: absolute;
+      right: 100%;
+      width: 200px;
+      text-align: right;
+      margin-right: 20px;
+      @include font-regular;
+      font-size: 15px;
+      letter-spacing: 1px;
+   }
+
+   .chimera {
+      position: relative;
+      display: flex;
+      margin-bottom: 10px;
+      h1 {
+         font-size: 81px;
+         line-height: 125px;
+         letter-spacing: 3.3px;
+      }
+      p {
+         line-height: 24px;
+         margin-top: 38px;
+      }
+   }
+
+   .squad {
+      margin-bottom: 50px;
+      &--member {
+         width: calc(var(--content-width) / 2 + 20px);
+
+         h3 {
+            font-size: 24px;
+            line-height: 42px;
+            letter-spacing: 3px;
+         }
+         p {
+            margin-bottom: 20px;
+         }
+         .sm {
+            svg {
+               width: 24px;
+               height: 24px;
+            }
+         }
+      }
+   }
+
+   .contact {
+      height: calc(var(--content-width) /1.618 /1.618);
+      &::after {
+         height: 100%;
+         border: 7px solid $red;
+      }
+      &--header-wrapper {
+         h1 {
+            font-size: 39px;
+            top: auto;
+            bottom: -9px;
+            left: -2px;
+         }
+      }
+      p {
+         margin-bottom: auto;
+         font-size: 24px;
+         line-height: 40px;
+         letter-spacing: 1px;
+      }
+   }
+}
