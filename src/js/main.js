@@ -4,8 +4,7 @@ bodyScrollLock.disableBodyScroll(window);
 const SVGInject = require('@iconfu/svg-inject');
 const debounce = require('lodash.debounce');
 
-
-
+document.querySelectorAll('img.inject-svg').forEach(img => SVGInject(img));
 
 const main = document.querySelector('#main'),
    mainCopy = document.querySelector('#main-copy'); 
