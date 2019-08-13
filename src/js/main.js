@@ -4,6 +4,8 @@ bodyScrollLock.disableBodyScroll(window);
 const SVGInject = require('@iconfu/svg-inject');
 const debounce = require('lodash.debounce');
 
+require('./wiggle');
+
 document.querySelectorAll('img.inject-svg').forEach(img => SVGInject(img));
 
 const main = document.querySelector('#main'),

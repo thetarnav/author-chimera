@@ -64,3 +64,18 @@
    image-rendering: optimize-contrast;
    -ms-interpolation-mode: nearest-neighbor;
 }
+
+@mixin wiggle {
+   @include blur-fix;
+
+   transition: transform var(--t) ease-in-out;
+   transform: translate(var(--x), var(--y));
+   will-change: transform;
+
+   @media screen and (min-width: $desktop) {
+      &:hover {
+         transition: .4s;
+         transform: translate(0, 0);
+      }
+   }
+}

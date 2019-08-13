@@ -94,6 +94,8 @@ $content-width: 296px;
       width: var(--content-width);
       height: 43px;
 
+      @include wiggle;
+
       @include font-semibold-italic;
       line-height: 43px;
       font-size: 19px;
@@ -115,6 +117,8 @@ $content-width: 296px;
 
 .chimera {
    h1 {
+      @include wiggle;
+
       width: var(--content-width);
       @include font-black-italic;
       color: $red;
@@ -128,6 +132,7 @@ $content-width: 296px;
 .squad {
    display: flex;
    &--member {
+      @include wiggle;
       width: 168px;
       h3 {
          @include font-regular;
@@ -205,6 +210,8 @@ $content-width: 296px;
       left: -5px;
    }
    p {
+      @include wiggle;
+
       position: relative;
       z-index: 10;
       margin: auto;
