@@ -210,8 +210,6 @@ $content-width: 296px;
       left: -5px;
    }
    p {
-      @include wiggle;
-
       position: relative;
       z-index: 10;
       margin: auto;
@@ -229,3 +227,4 @@ $content-width: 296px;
 @import './devices/tablet.scss';
 @import './devices/tablet-h.scss';
 @import './devices/desktop.scss';
+@import './devices/full-hd.scss';

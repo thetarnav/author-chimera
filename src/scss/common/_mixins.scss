@@ -74,8 +74,12 @@
 
    @media screen and (min-width: $desktop) {
       &:hover {
-         transition: .4s;
+         transition: transform .4s ease-in-out;
          transform: translate(0, 0);
       }
+   }
+   &:focus, &:active {
+      transition: transform .4s ease-in-out;
+      transform: translate(0, 0);
    }
 }

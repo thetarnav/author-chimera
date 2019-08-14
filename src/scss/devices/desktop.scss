@@ -4,10 +4,14 @@
       --page-margin: 80px;
    }
 
-   main {
-      // perspective: 500px;
-      // transform-style: preserve-3d;
-      // transform: rotateX(20deg);
+   .main {
+      perspective: 1000px;
+      transform-style: preserve-3d;
+      &--wrapper {
+         transform: rotateX(var(--aX)) rotateY(var(--aY));
+         transition: transform .3s cubic-bezier(0, .15, .31, 1.4);
+         will-change: transform;
+      }
    }
 
    .website {
@@ -16,7 +20,6 @@
          height: 66px;
          line-height: 66px;
          letter-spacing: 2px;
-         // transition: transform .2s ease-in-out;
          
          
          // position: relative;
@@ -31,10 +34,10 @@
          // }
 
          // &:hover {
-         //    // background-color: transparent;
-         //    // color: $cold-white;
-         //    @include blur-fix;
-         //    transform: translateZ(10px);
+         //    background-color: transparent;
+         //    color: $cold-white;
+         //    // @include blur-fix;
+         //    // transform: translateZ(10px);
          // }
 
       }
@@ -92,6 +95,12 @@
                }
             }
          }
+      }
+   }
+   
+   .contact {
+      p {
+         @include wiggle;
       }
    }
 }

@@ -1,0 +1,11 @@
+@media screen and (min-width: $desktop) {
+   :root {
+      --page-margin: 107px;
+   }
+
+   .contact {
+      &::after {
+         border: 10px solid $red;
+      }
+   }
+}

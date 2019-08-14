@@ -5,6 +5,7 @@ const SVGInject = require('@iconfu/svg-inject');
 const debounce = require('lodash.debounce');
 
 require('./wiggle');
+require('./3d-follow-cursor');
 
 document.querySelectorAll('img.inject-svg').forEach(img => SVGInject(img));
 
